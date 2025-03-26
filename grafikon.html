@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+	<html lang="hr">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="Vremenska prognoza">
+		<meta name="keywords" content="HTML, CSS">
+  		<meta name="author" content="Adrian Horvat">
+		<!--dodati meta tag bitan za stranicu-->
+		<!--dodati link za css dokumente -->
+		<link rel="stylesheet" href="style.css">
+		<title>Grafikon</title> <!--promijeniti odgovarajući tekst na stranici
+		ovo je samo predložak-->
+	</head>
+	<body>
+		<header>
+		<h1>Dobrodosli na moju web stranicu</h1>
+		</header>
+
+        <nav role="navigation" aria-label="Primarna navigacija">
+            <ul class="dropdown">
+              <li>
+                <a href="#" aria-haspopup="true" aria-expanded="false">Primarna navigacija</a>
+                <ul>
+                  <li><a href="index_predlozak.html">Pocetna</a></li>
+                  <li><a href="grafikon.html">Grafikon</a></li>
+                  <li><a href="slike.html">Slike</a></li>
+                </ul>
+              </li>
+            </ul>
+        </nav>
+        <br>
+        <br>
+        <h1>Prosječna temperatura po godišnjem dobu</h1>
+        <br>
+        <div class="chart-container">
+            <div class="chart">
+                <div class="bar-container">
+                    <div class="bar spring">
+                        <div class="bar-value" data-temp="23.8"></div>
+                    </div>
+                    <div class="bar-label">Proljeće</div>
+                </div>
+                
+                <div class="bar-container">
+                    <div class="bar summer">
+                        <div class="bar-value" data-temp="28.7"></div>
+                    </div>
+                    <div class="bar-label">Ljeto</div>
+                </div>
+                
+                <div class="bar-container">
+                    <div class="bar autumn">
+                        <div class="bar-value" data-temp="25.3"></div>
+                    </div>
+                    <div class="bar-label">Jesen</div>
+                </div>
+                
+                <div class="bar-container">
+                    <div class="bar winter">
+                        <div class="bar-value" data-temp="2"></div>
+                    </div>
+                    <div class="bar-label">Zima</div>
+                </div>
+            </div>
+        </div>
+
+        
+		<h1>Distribucija vremenskih tipova</h1>
+        <div class="pie-chart"></div>
+
+        <div class="legend">
+            <div><span class="legend-color sunny"></span> Sunčano</div>
+            <div><span class="legend-color rainy"></span> Kišovito</div>
+            <div><span class="legend-color cloudy"></span> Oblačno</div>
+        </div>
+
+		<section> <!-- dodati neke od obilježja za ARIA-->
+			<h2>Ovo je glavna sekcija</h2>
+			<p>HTML5 omogucava semanticku strukturu koja poboljsava pristupacnost i SEO.</p>
+		</section>
+		 <!-- dodati jedan aside na desnoj strani s ugrađenom google mapom/filmom ili slično-->
+		<article>
+			<h2>Najnovije vijesti</h2>
+			<p>Ovdje se nalazi clanak s vaznim informacijama.</p>
+		</article>
+		
+
+		<!--dodati odgovarajuće elemente na temelju danog zadatka: tablice, slike, tekst
+		Nepotrebno obrisati! -->
+		<footer>
+		<p>&copy; 2025. Web Programiranje. Sva prava pridrzana.</p>
+		</footer>
+	</body>
+	</html>
