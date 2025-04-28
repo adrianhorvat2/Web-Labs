@@ -9,12 +9,13 @@
 		<!--dodati meta tag bitan za stranicu-->
 		<!--dodati link za css dokumente -->
 		<link rel="stylesheet" href="style.css">
-		<title>Vremenska prognoza</title> <!--promijeniti odgovarajući tekst na stranici
+		<title>Planiranje aktivnosti</title> <!--promijeniti odgovarajući tekst na stranici
 		ovo je samo predložak-->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
 	</head>
 	<body>
 		<header>
-		<h1>Dobrodosli na moju web stranicu</h1>
+		<h1>Isplaniraj aktivnost prema vremenskim uvjetima</h1>
 		</header>
 		<!-- <header>
        <nav aria-labelledby="primarna-navigacija">
@@ -24,16 +25,6 @@
         </header>
     -->
 	<nav role="navigation" aria-label="Primarna navigacija">
-		<ul class="dropdown">
-		  <li>
-			<a href="#" aria-haspopup="true" aria-expanded="false">Primarna navigacija</a>
-			<ul>
-			  <li><a href="index.html">Pocetna</a></li>
-			  <li><a href="grafikon.html">Grafikon</a></li>
-			  <li><a href="slike.html">Slike</a></li>
-			</ul>
-		  </li>
-		</ul>
 	</nav>
 	<br>
     <br>
@@ -79,49 +70,57 @@
 		<div class="data-container">
 			<table>
 				<tr>
+					<th>ID</th>
 					<th>Temperature (°C)</th>
-					<th>Humidity (%)</th>
 					<th>Wind Speed (km/h)</th>
-					<th>Precipitation (%)</th>
 					<th>Cloud Cover</th>
 					<th>Atmospheric Pressure</th>
-					<th>UV Index</th>
 					<th>Season</th>
-					<th>Visibility (km)</th>
 					<th>Location</th>
 					<th>Weather Type</th>
+					<th>Status</th>
 				</tr>
-				<tr><td>23</td><td>69</td><td>9.5</td><td>10</td><td>clear</td><td>1012.91</td><td>9</td><td>Spring</td><td>8.5</td><td>inland</td><td>Sunny</td></tr>
-				<tr><td>29</td><td>82</td><td>18</td><td>78</td><td>overcast</td><td>991.54</td><td>3</td><td>Spring</td><td>4</td><td>inland</td><td>Rainy</td></tr>
-				<tr><td>36</td><td>48</td><td>3.5</td><td>11</td><td>partly cloudy</td><td>1024.92</td><td>10</td><td>Autumn</td><td>5.5</td><td>mountain</td><td>Sunny</td></tr>
-				<tr><td>32</td><td>35</td><td>5.5</td><td>9</td><td>partly cloudy</td><td>1010.24</td><td>6</td><td>Summer</td><td>9</td><td>coastal</td><td>Sunny</td></tr>
-				<tr><td>23</td><td>23</td><td>3.5</td><td>8</td><td>clear</td><td>1027.69</td><td>5</td><td>Spring</td><td>6.5</td><td>mountain</td><td>Sunny</td></tr>
-				<tr><td>30</td><td>57</td><td>12.5</td><td>33</td><td>overcast</td><td>1002.2</td><td>1</td><td>Autumn</td><td>7</td><td>inland</td><td>Cloudy</td></tr>
-				<tr><td>28</td><td>65</td><td>1.5</td><td>20</td><td>partly cloudy</td><td>1007</td><td>4</td><td>Spring</td><td>8.5</td><td>mountain</td><td>Cloudy</td></tr>
-				<tr><td>29</td><td>96</td><td>11.5</td><td>79</td><td>partly cloudy</td><td>1013.23</td><td>0</td><td>Spring</td><td>1</td><td>inland</td><td>Rainy</td></tr>
-				<tr><td>35</td><td>63</td><td>8</td><td>3</td><td>clear</td><td>1029.83</td><td>10</td><td>Spring</td><td>5</td><td>mountain</td><td>Sunny</td></tr>
-				<tr><td>18</td><td>82</td><td>8.5</td><td>83</td><td>overcast</td><td>999.13</td><td>0</td><td>Summer</td><td>2.5</td><td>coastal</td><td>Rainy</td></tr>
-				<tr><td>8</td><td>90</td><td>1.5</td><td>70</td><td>partly cloudy</td><td>1011.19</td><td>10</td><td>Spring</td><td>7.5</td><td>mountain</td><td>Cloudy</td></tr>
-				<tr><td>19</td><td>65</td><td>2.5</td><td>20</td><td>partly cloudy</td><td>1016.81</td><td>1</td><td>Spring</td><td>8</td><td>inland</td><td>Cloudy</td></tr>
-				<tr><td>28</td><td>72</td><td>14</td><td>73</td><td>partly cloudy</td><td>1005.12</td><td>1</td><td>Summer</td><td>1</td><td>coastal</td><td>Rainy</td></tr>
-				<tr><td>40</td><td>94</td><td>15</td><td>97</td><td>clear</td><td>1021.59</td><td>3</td><td>Autumn</td><td>4.5</td><td>coastal</td><td>Sunny</td></tr>
-				<tr><td>15</td><td>61</td><td>11</td><td>63</td><td>overcast</td><td>1006.12</td><td>3</td><td>Spring</td><td>4.5</td><td>mountain</td><td>Rainy</td></tr>
-				<tr><td>26</td><td>90</td><td>26</td><td>88</td><td>partly cloudy</td><td>998.97</td><td>4</td><td>Summer</td><td>2.5</td><td>coastal</td><td>Rainy</td></tr>
-				<tr><td>26</td><td>67</td><td>11</td><td>74</td><td>overcast</td><td>993.37</td><td>1</td><td>Spring</td><td>1.5</td><td>inland</td><td>Rainy</td></tr>
+				<tbody id="vremenska-tablica"></tbody>
 			</table>
 
 			<aside>
-				<picture>
-				<source media="(min-width: 769px)" srcset="prognoza.png">
-				<source media="(max-width: 768px)" srcset="weather2.webp">
-				<img src="prognoza.png" alt="Prognoza">
-				</picture>
+				<h2>Plan</h2>
+				<table>
+					<tr>
+						<th>ID</th>
+						<th>Temperature (°C)</th>
+						<th>Season</th>
+						<th>Weather Type</th>
+					</tr>
+					<tbody id="vremenska-tablica-plan"></tbody>
+				</table>
+				<button id="potvrdi-plan">Potvrdi plan</button>
 			</aside>
 		</div>
 
 		<section> <!-- dodati neke od obilježja za ARIA-->
-			<h2>Ovo je glavna sekcija</h2>
-			<p>HTML5 omogucava semanticku strukturu koja poboljsava pristupacnost i SEO.</p>
+			<div id="filteri">
+				<select id="filter-season">
+				<option value="">Sezona</option>
+				<option value="Spring">Proljeće</option>
+				<option value="Summer">Ljeto</option>
+				<option value="Winter">Zima</option>
+				<option value="Autumun">Jesen</option>
+				</select>
+								
+				<select id="filter-weather">
+				<option value="">Vrijeme</option>
+				<option value="Sunny">Sunčano</option>
+				<option value="Cloudy">Oblačno</option>
+				<option value="Rainy">Kišovito</option>
+				</select>
+
+				<input type="number" id="filter-temp-min" placeholder="Temperatura od">
+				<input type="number" id="filter-temp-max" placeholder="Temperatura do">
+				
+				<button id="primijeni-filtere">Filtriraj</button>
+			</div>
+				
 		</section>
 		 <!-- dodati jedan aside na desnoj strani s ugrađenom google mapom/filmom ili slično-->
 		<article>
@@ -135,5 +134,6 @@
 		<footer>
 		<p>&copy; 2025. Web Programiranje. Sva prava pridrzana.</p>
 		</footer>
+		<script src="script.js"></script>
 	</body>
 	</html>
